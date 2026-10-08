@@ -46,9 +46,9 @@ The game is still in an early stage of development. More features and improvemen
 
 ## Sources/Tutorials Used
 
-[Github - TimFloClausen - Snake-Game](https://github.com/TimFloClausen)
+[Github/TimFloClausen - Snake-Game](https://github.com/TimFloClausen)
 
-[YouTub - Programmieren mit Pascal - Snake in Python programmieren](https://www.youtube.com/watch?v=n-yi5feCQwQ list=PLPYSnTen2yesUCNyfLbFLdIF0Dv5HQU2l)
+[YouTube/Programmieren mit Pascal - Snake in Python programmieren](https://www.youtube.com/watch?v=n-yi5feCQwQlist=PLPYSnTen2yesUCNyfLbFLdIF0Dv5HQU2l)
 
 ## Planned Features
 
