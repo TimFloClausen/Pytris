@@ -46,11 +46,13 @@ The game is still in an early stage of development. More features and improvemen
 
 ## Sources/Tutorials Used
 
-Sources and tutorials used during development will be listed here.
+[Github - TimFloClausen - Snake-Game](https://github.com/TimFloClausen)
+
+[YouTub - Programmieren mit Pascal - Snake in Python programmieren](https://www.youtube.com/watch?v=n-yi5feCQwQ list=PLPYSnTen2yesUCNyfLbFLdIF0Dv5HQU2l)
 
 ## Planned Features
 
-- [ ] Basic game window
+- [x] Basic game window
 - [ ] Tetris board
 - [ ] Falling blocks
 - [ ] Move blocks
