@@ -19,20 +19,28 @@ pygame.display.set_caption("Pytris")
 run = True
 while run:
     pygame.time.delay(DELAY)
-    window.fill((0, 0, 0))
-    x = 150
-    counter = 0
+    window.fill((10, 10, 10))
+
+    
     pygame.draw.rect(window, (0, 0, 255), 
-                 [150, 50, 400, 800], 4)
-    for i in range(20):
-                line_pos = 153
-                line_pos2 = 53
-                pygame.draw.rect(window, (255, 255, 255),
-                                [159, line_pos, 40, 40], 2)
-                line_pos += 40
-                pygame.draw.rect(window, (255, 255, 255),
-                                [line_pos2, 50, 40, 40], 2)
-                line_pos2 += 40
+                 [148, 50, 408, 808], 4)
+    lenght = 155
+    counter = 0
+    high = 14
+
+    for i in range(200):
+        if counter % 10 == 0 and counter <= 200:
+                high += 40
+        if counter % 10 == 0 and counter <= 200:
+             lenght = 153
+          
+        for i in range(10):
+            pygame.draw.rect(window, (255, 255, 255),
+                                [lenght, high, 40, 40], 1)
+        counter += 1      
+        lenght += 40
+                
+                
                 
     
     
