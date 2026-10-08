@@ -50,6 +50,8 @@ The game is still in an early stage of development. More features and improvemen
 
 [YouTube/Programmieren mit Pascal - Snake in Python programmieren](https://www.youtube.com/watch?v=n-yi5feCQwQlist=PLPYSnTen2yesUCNyfLbFLdIF0Dv5HQU2l)
 
+[Geeksforgeeks- Pygame – Drawing Objects and Shapes](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/)
+
 ## Planned Features
 
 - [x] Basic game window
