@@ -55,7 +55,7 @@ The game is still in an early stage of development. More features and improvemen
 ## Planned Features
 
 - [x] Basic game window
-- [ ] Tetris board
+- [x] Tetris board
 - [ ] Falling blocks
 - [ ] Move blocks
 - [ ] Rotate blocks
