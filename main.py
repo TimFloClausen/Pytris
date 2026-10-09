@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 
 
-DELAY = 500  # Time in milliseconds between frames
+DELAY = 500 # Time in milliseconds between frames
 WIN_SIZE_W = 700  # Window size (width) in pixels
 WIN_SIZE_H = 900  # Window size (height) in pixels
 board_x = 400 + 40
@@ -24,6 +24,7 @@ def block_I():
 
 run = True
 while run:
+    pygame.time.get_ticks()
     pygame.time.delay(DELAY)
     window.fill((10, 10, 10))
 
@@ -34,6 +35,18 @@ while run:
     counter = 0
     high = 10
     block_I()
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_d]:
+        SPAWNX += 40
+    elif keys[pygame.K_a]:
+            SPAWNX -= 40
+    SPAWNY += 40
+    if SPAWNY >= 690:
+        SPAWNY = 690
+    
+    
+    
+         
 
     for i in range(200):
         if counter % 10 == 0 and counter <= 200:
@@ -46,8 +59,10 @@ while run:
                                 [lenght, high, 40, 40], 1)
         counter += 1      
         lenght += 40
-    SPAWNY += 40
     
+
+    
+
                 
     
     pygame.display.update()
