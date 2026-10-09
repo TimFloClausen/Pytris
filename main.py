@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 
 
-DELAY = 125 # Time in milliseconds between frames
+DELAY = 62 # Time in milliseconds between frames
 WIN_SIZE_W = 700  # Window size (width) in pixels
 WIN_SIZE_H = 900  # Window size (height) in pixels
 board_x = 400 + 40
@@ -38,12 +38,14 @@ while run:
     high = 10
     block_I()
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_d]:
-        SPAWNX += 40
-    elif keys[pygame.K_a]:
+
+    if SPAWNY < 690:
+        if keys[pygame.K_d]:
+            SPAWNX += 40
+        elif keys[pygame.K_a]:
             SPAWNX -= 40
-    elif keys[pygame.K_s]:
-         SPAWNY += 90
+        elif keys[pygame.K_s]:
+            SPAWNY += 90
          
     SPEED_COUNTER += 1
 
@@ -53,6 +55,7 @@ while run:
     
     if SPAWNY >= 690:
         SPAWNY = 690
+    
     
     
     
