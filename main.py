@@ -22,6 +22,12 @@ def block_I():
     pygame.draw.rect(window, (0, 255, 255), 
                       [SPAWNX, SPAWNY, 40, 160], 0)
 
+def new_block():
+    SPAWNX = 151
+    SPAWNY = 50
+    pygame.draw.rect(window, (0, 255, 255), 
+                          [SPAWNX, SPAWNY, 40, 160], 0)
+
 
 
 run = True
@@ -29,10 +35,12 @@ while run:
     pygame.time.get_ticks()
     pygame.time.delay(DELAY)
     window.fill((10, 10, 10))
+    block_locked = False
 
     
     pygame.draw.rect(window, (0, 0, 255), 
                  [146, 46, 408, 808], 4)
+    
     lenght = 150
     counter = 0
     high = 10
@@ -55,6 +63,7 @@ while run:
     
     if SPAWNY >= 690:
         SPAWNY = 690
+        new_block()
     
     
     
