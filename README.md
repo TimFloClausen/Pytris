@@ -56,8 +56,9 @@ The game is still in an early stage of development. More features and improvemen
 
 - [x] Basic game window
 - [x] Tetris board
-- [ ] Falling blocks
-- [ ] Move blocks
+- [x] Falling blocks
+- [x] Move blocks
+- [ ] All diffrent blocks
 - [ ] Rotate blocks
 - [ ] Collision detection
 - [ ] Line clearing

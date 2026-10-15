@@ -7,7 +7,7 @@ pygame.init()
 DELAY = 62 # Time in milliseconds between frames
 WIN_SIZE_W = 700  # Window size (width) in pixels
 WIN_SIZE_H = 900  # Window size (height) in pixels
-SPAWNX = 150
+SPAWNX = 350
 SPAWNY = 50
 SPEED_COUNTER = 0
 
@@ -28,7 +28,7 @@ def block_I():
 
 def new_block():
     for blocks in landed_blocks:
-        SPAWNX = 151
+        SPAWNX = 350
         SPAWNY = 50
         pygame.draw.rect(window, (0, 255, 255), 
                             [SPAWNX, SPAWNY, 40, 160], 0)
