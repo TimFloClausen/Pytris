@@ -1,5 +1,6 @@
 # Imported libraries
 import pygame
+import random
 # initializing pygames
 pygame.init()
 
@@ -24,7 +25,6 @@ def block_I():
     
         pygame.draw.rect(window, (0, 255, 255), 
                         [SPAWNX, SPAWNY, 40, 160], 0)
-        
 
 def new_block():
     for blocks in landed_blocks:
@@ -32,6 +32,14 @@ def new_block():
         SPAWNY = 50
         pygame.draw.rect(window, (0, 255, 255), 
                             [SPAWNX, SPAWNY, 40, 160], 0)
+def block_0():
+
+    for blocks in landed_blocks:
+            SPAWNX = 350
+            SPAWNY = 50   
+            pygame.draw.rect(window, (255, 255, 0), 
+                            [SPAWNX, SPAWNY, 80, 80], 0)
+        
         
 
 def movement(x, y):
@@ -44,7 +52,8 @@ def movement(x, y):
         elif keys[pygame.K_s]:
             y += 40
     return x, y
-    
+def random_block():
+    random.randint(block_I(), )
 
 
 
@@ -86,7 +95,7 @@ while run:
         SPAWNY = 690
         landed_blocks.append((SPAWNX, SPAWNY))
         print(landed_blocks)
-        new_block()
+        block_0()
         SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
     
     
