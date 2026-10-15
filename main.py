@@ -7,7 +7,7 @@ pygame.init()
 DELAY = 62 # Time in milliseconds between frames
 WIN_SIZE_W = 700  # Window size (width) in pixels
 WIN_SIZE_H = 900  # Window size (height) in pixels
-SPAWNX = 151
+SPAWNX = 150
 SPAWNY = 50
 SPEED_COUNTER = 0
 
@@ -37,9 +37,9 @@ def new_block():
 def movement(x, y):
     keys = pygame.key.get_pressed()
     if y < 690:
-        if keys[pygame.K_d]:
+        if keys[pygame.K_d] and x + 40 <= 510:
             x += 40
-        elif keys[pygame.K_a]:
+        elif keys[pygame.K_a] and x - 40 >= 150:
             x -= 40
         elif keys[pygame.K_s]:
             y += 40
@@ -71,13 +71,12 @@ while run:
     SPEED_COUNTER += 1
 
     if SPEED_COUNTER == 8:
-         SPAWNY += 40
-         SPEED_COUNTER = 0
-    
-    if SPAWNY >= 146:
-        for i in range(10):
-            SPAWNX += 40
-   
+            SPAWNY += 40
+            SPEED_COUNTER = 0
+
+     
+
+
 
 
          
