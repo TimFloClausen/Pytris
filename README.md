@@ -52,6 +52,8 @@ The game is still in an early stage of development. More features and improvemen
 
 [Geeksforgeeks- Pygame – Drawing Objects and Shapes](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/)
 
+[YouTube/Coder Space -  Let's code Tetris Game in Python ](https://www.youtube.com/watch?v=7kGNs5R-AM8&t=136s)
+
 ## Planned Features
 
 - [x] Basic game window
