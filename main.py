@@ -54,6 +54,7 @@ def movement(x, y):
     return x, y
 def random_block():
     random.randint(block_I(), )
+    print
 
 
 
@@ -94,7 +95,6 @@ while run:
     if SPAWNY >= 690:
         SPAWNY = 690
         landed_blocks.append((SPAWNX, SPAWNY))
-        print(landed_blocks)
         block_0()
         SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
     
@@ -110,7 +110,7 @@ while run:
              lenght = 150
   
         for i in range(10):
-            pygame.draw.rect(window, (255, 255, 255),
+            pygame.draw.rect(window, (200, 200, 200),
                                 [lenght, high, 40, 40], 1)
         counter += 1      
         lenght += 40
