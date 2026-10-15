@@ -21,24 +21,25 @@ landed_blocks = []
 window = pygame.display.set_mode((WIN_SIZE_W, WIN_SIZE_H))
 pygame.display.set_caption("Pytris")
 
-def block_I():
-    
-        pygame.draw.rect(window, (0, 255, 255), 
-                        [SPAWNX, SPAWNY, 40, 160], 0)
+figures_pos = [[(-1, 0), (-2, 0), (0, 0), (1, 0)],
+               [(0, -1), (-1, -1), (-1, 0), (0, 0)],
+               [(-1, 0), (-1, 1), (0, 0), (0, -1)],
+               [(0, 0), (-1, 0), (0, 1), (-1, -1)],
+               [(0, 0), (0, -1), (0, 1), (-1, -1)],
+               [(0, 0), (0, -1), (0, 1), (1, -1)],
+               [(0, 0), (0, -1), (0, 1), (-1, 0)]]
 
-def new_block():
-    for blocks in landed_blocks:
-        SPAWNX = 350
-        SPAWNY = 50
-        pygame.draw.rect(window, (0, 255, 255), 
-                            [SPAWNX, SPAWNY, 40, 160], 0)
-def block_0():
+figures = [[pygame.Rect(x + W // 2, y + 1, 1, 1) for x, y in fig_pos] for fig_pos in figures_pos]
+figure_rect = pygame.Rect(0, 0, 40 - 2, 40 - 2)
+field = [[0 for i in range(W)] for j in range(H)]
 
-    for blocks in landed_blocks:
-            SPAWNX = 350
-            SPAWNY = 50   
-            pygame.draw.rect(window, (255, 255, 0), 
-                            [SPAWNX, SPAWNY, 80, 80], 0)
+def draw():
+    for i in range(4):
+    figure_rect.x = figure[i].x * 40
+    figure_rect.y = figure[i].y * 40
+    pygame.draw.rect(game_sc, pygame.Color('white'), figure_rect)
+         
+
         
         
 
@@ -52,9 +53,9 @@ def movement(x, y):
         elif keys[pygame.K_s]:
             y += 40
     return x, y
-def random_block():
-    random.randint(block_I(), )
 
+def random_block():
+    
 
 
 run = True
@@ -71,7 +72,7 @@ while run:
     lenght = 150
     counter = 0
     high = 10
-    block_I()
+    draw()
     SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
     
 
