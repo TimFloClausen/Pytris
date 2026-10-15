@@ -24,6 +24,7 @@ def block_I():
     
         pygame.draw.rect(window, (0, 255, 255), 
                         [SPAWNX, SPAWNY, 40, 160], 0)
+        
 
 def new_block():
     for blocks in landed_blocks:
@@ -31,6 +32,18 @@ def new_block():
         SPAWNY = 50
         pygame.draw.rect(window, (0, 255, 255), 
                             [SPAWNX, SPAWNY, 40, 160], 0)
+        
+
+def movement(x, y):
+    keys = pygame.key.get_pressed()
+    if y < 690:
+        if keys[pygame.K_d]:
+            x += 40
+        elif keys[pygame.K_a]:
+            x -= 40
+        elif keys[pygame.K_s]:
+            y += 40
+    return x, y
     
 
 
@@ -50,15 +63,10 @@ while run:
     counter = 0
     high = 10
     block_I()
-    keys = pygame.key.get_pressed()
+    SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
+    
 
-    if SPAWNY < 690:
-        if keys[pygame.K_d]:
-            SPAWNX += 40
-        elif keys[pygame.K_a]:
-            SPAWNX -= 40
-        elif keys[pygame.K_s]:
-            SPAWNY += 90
+
          
     SPEED_COUNTER += 1
 
@@ -66,11 +74,21 @@ while run:
          SPAWNY += 40
          SPEED_COUNTER = 0
     
+    if SPAWNY >= 146:
+        for i in range(10):
+            SPAWNX += 40
+   
+
+
+         
+         
+    
     if SPAWNY >= 690:
         SPAWNY = 690
         landed_blocks.append((SPAWNX, SPAWNY))
         print(landed_blocks)
         new_block()
+        SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
     
     
     
