@@ -14,6 +14,7 @@ SPEED_COUNTER = 0
 
 landed_blocks = []
 
+ROTATION = False
     
     
 
@@ -22,9 +23,12 @@ window = pygame.display.set_mode((WIN_SIZE_W, WIN_SIZE_H))
 pygame.display.set_caption("Pytris")
 
 def block_I():
-    
-        pygame.draw.rect(window, (0, 255, 255), 
-                        [SPAWNX, SPAWNY, 40, 160], 0)
+        if ROTATION:
+            pygame.draw.rect(window, (0, 255, 255), 
+                        [SPAWNX, SPAWNY, 160, 40], 0)
+        else:
+            pygame.draw.rect(window, (0, 255, 255), 
+                                     [SPAWNX, SPAWNY, 40, 160], 0)
 
 def new_block():
     for blocks in landed_blocks:
@@ -39,7 +43,7 @@ def block_0():
             SPAWNY = 50   
             pygame.draw.rect(window, (255, 255, 0), 
                             [SPAWNX, SPAWNY, 80, 80], 0)
-        
+
         
 
 def movement(x, y):
@@ -52,19 +56,29 @@ def movement(x, y):
         elif keys[pygame.K_s]:
             y += 40
         elif keys[pygame.K_SPACE]:
-             
-             pygame.draw.rect(window, (0, 255, 255), 
-                                     [SPAWNX, SPAWNY, 230, 40], 0)
+            ROTATION = False
+
+            if ROTATION == False:
+                ROTATION = True
+            
+            elif ROTATION:
+                        pygame.draw.rect(window, (0, 255, 255), 
+                                    [SPAWNX, SPAWNY, 160, 40], 0)
+            else:
+                pygame.draw.rect(window, (0, 255, 255), 
+                                    [SPAWNX, SPAWNY, 40, 160], 0)
+                 
+                 
              
     return x, y
 def random_block():
     random.randint(block_I(), )
-    print
 
 
 
 run = True
 while run:
+    ROTATION = True
     pygame.time.get_ticks()
     pygame.time.delay(DELAY)
     window.fill((10, 10, 10))
