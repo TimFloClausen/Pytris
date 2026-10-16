@@ -51,6 +51,11 @@ def movement(x, y):
             x -= 40
         elif keys[pygame.K_s]:
             y += 40
+        elif keys[pygame.K_SPACE]:
+             
+             pygame.draw.rect(window, (0, 255, 255), 
+                                     [SPAWNX, SPAWNY, 230, 40], 0)
+             
     return x, y
 def random_block():
     random.randint(block_I(), )
