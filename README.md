@@ -52,6 +52,8 @@ The game is still in an early stage of development. More features and improvemen
 
 [Geeksforgeeks- Pygame – Drawing Objects and Shapes](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/)
 
+[YouTube/John Elder - Adding Images (Blitting) - PyGame Thursdays 4](https://www.youtube.com/watch?v=GRbKoGwfsCw&t=217s)
+
 ## Planned Features
 
 - [x] Basic game window
