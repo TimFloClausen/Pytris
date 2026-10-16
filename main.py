@@ -25,51 +25,30 @@ pygame.display.set_caption("Pytris")
 
 def block_I():
         block_I_1 = pygame.image.load("pictures/I_Block_1.png")
-        window.blit(block_I_1, SPAWN)
+        window.blit(block_I_1, (SPAWNX, SPAWNY))
 
-def new_block():
-    for blocks in landed_blocks:
-        SPAWNX = 350
-        SPAWNY = 50
-        pygame.draw.rect(window, (0, 255, 255), 
-                            [SPAWNX, SPAWNY, 40, 160], 0)
-def block_0():
+def block_O():
+    block_O_1 = pygame.image.load("pictures/O_Block.png")
+    window.blit(block_O_1, (SPAWNX, SPAWNY))
 
-    for blocks in landed_blocks:
-            SPAWNX = 350
-            SPAWNY = 50   
-            pygame.draw.rect(window, (255, 255, 0), 
-                            [SPAWNX, SPAWNY, 80, 80], 0)
-
-        
-
-def movement(x, y):
+def movement(SPAWNX, SPAWNY):
     keys = pygame.key.get_pressed()
-    if y < 690:
-        if keys[pygame.K_d] and x + 40 <= 510:
-            x += 40
-        elif keys[pygame.K_a] and x - 40 >= 150:
-            x -= 40
+    if SPAWNY < 690:
+        if keys[pygame.K_d] and SPAWNX + 40 <= 510:
+            SPAWNX += 40
+        elif keys[pygame.K_a] and SPAWNX - 40 >= 150:
+            SPAWNX -= 40
         elif keys[pygame.K_s]:
-            y += 40
+            SPAWNY += 40
         elif keys[pygame.K_SPACE]:
-            ROTATION = False
+            print
+    return SPAWNX, SPAWNY
 
-            if ROTATION == False:
-                ROTATION = True
-            
-            elif ROTATION:
-                        pygame.draw.rect(window, (0, 255, 255), 
-                                    [SPAWNX, SPAWNY, 160, 40], 0)
-            else:
-                pygame.draw.rect(window, (0, 255, 255), 
-                                    [SPAWNX, SPAWNY, 40, 160], 0)
-                 
-                 
-             
-    return x, y
+
+
+
 def random_block():
-    random.randint(block_I(), )
+    random(1, 2,)
 
 
 
@@ -89,7 +68,11 @@ while run:
     counter = 0
     high = 10
     block_I()
+
     SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
+    
+   
+    
     
 
 
@@ -111,8 +94,9 @@ while run:
     if SPAWNY >= 690:
         SPAWNY = 690
         landed_blocks.append((SPAWNX, SPAWNY))
-        block_0()
-        SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
+        block_O()
+        SPAWNX = 350
+        SPAWNY = 50
     
     
     
