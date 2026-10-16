@@ -11,6 +11,7 @@ WIN_SIZE_H = 900  # Window size (height) in pixels
 SPAWNX = 350
 SPAWNY = 50
 SPEED_COUNTER = 0
+SPAWN = (SPAWNX, SPAWNY)
 
 landed_blocks = []
 
@@ -23,12 +24,8 @@ window = pygame.display.set_mode((WIN_SIZE_W, WIN_SIZE_H))
 pygame.display.set_caption("Pytris")
 
 def block_I():
-        if ROTATION:
-            pygame.draw.rect(window, (0, 255, 255), 
-                        [SPAWNX, SPAWNY, 160, 40], 0)
-        else:
-            pygame.draw.rect(window, (0, 255, 255), 
-                                     [SPAWNX, SPAWNY, 40, 160], 0)
+        block_I_1 = pygame.image.load("pictures/I_Block_1.png")
+        window.blit(block_I_1, SPAWN)
 
 def new_block():
     for blocks in landed_blocks:
