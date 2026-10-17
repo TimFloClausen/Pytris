@@ -95,8 +95,7 @@ while run:
         SPAWNY = 690
         landed_blocks.append((SPAWNX, SPAWNY))
         block_O()
-        SPAWNX = 350
-        SPAWNY = 50
+        
     
     
     
