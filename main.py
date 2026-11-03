@@ -23,27 +23,25 @@ ROTATION = False
 window = pygame.display.set_mode((WIN_SIZE_W, WIN_SIZE_H))
 pygame.display.set_caption("Pytris")
 
+
 def block_I(SPAWNX, SPAWNY, SPEED_COUNTER):
-        block_I_1 = pygame.image.load("pictures/I_Block_1.png")
-        SPAWNX = 350
-        SPAWNY = 50
-        
+    block_I_1 = pygame.image.load("pictures/I_Block_1.png")
                         
-        window.blit(block_I_1, (SPAWNX, SPAWNY))
+    window.blit(block_I_1, (SPAWNX, SPAWNY,))
         
         
-        SPEED_COUNTER += 1
+    SPEED_COUNTER += 1
         
-        if SPEED_COUNTER == 8:
-            SPAWNY += 40
-            SPEED_COUNTER = 0        
+    if SPEED_COUNTER == 8:
+        SPAWNY += 40
+        SPEED_COUNTER = 0        
                  
             
-        if SPAWNY >= 690:
-            SPAWNY = 690
-            print("Test")
+    if SPAWNY >= 690:
+        SPAWNY = 690
+        print("Test")
 
-        return SPAWNX, SPAWNY, SPEED_COUNTER
+    return SPAWNX, SPAWNY, SPEED_COUNTER
        
        
         
@@ -65,8 +63,6 @@ def movement(SPAWNX, SPAWNY):
             SPAWNX -= 40
         elif keys[pygame.K_s]:
             SPAWNY += 40
-        elif keys[pygame.K_SPACE]:
-            print
     return SPAWNX, SPAWNY
 
 
@@ -79,6 +75,7 @@ def random_block():
 
 run = True
 while run:
+    
     ROTATION = True
     pygame.time.get_ticks()
     pygame.time.delay(DELAY)
@@ -92,8 +89,15 @@ while run:
     lenght = 150
     counter = 0
     high = 10
-    block_I(SPAWNX, SPAWNY, SPEED_COUNTER)
 
+    SPAWNX, SPAWNY, SPEED_COUNTER = block_I(
+    SPAWNX, SPAWNY, SPEED_COUNTER)
+
+    SPAWNX, SPAWNY = movement(SPAWNX, SPAWNY)
+    
+    
+    
+    print(SPAWNX, SPAWNY, SPEED_COUNTER)
     
     
    
